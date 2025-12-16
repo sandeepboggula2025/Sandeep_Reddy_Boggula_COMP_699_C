@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h4>Household Dashboard</h4>
+  <a class="btn btn-primary mb-3" href="{{ url_for('request_pickup') }}">Request Pickup</a>
+  <a class="btn btn-outline-secondary mb-3" href="{{ url_for('notifications') }}">Notifications</a>
+
+  <h5>Current & Recent Requests</h5>
+  {% if pickups %}
+    <table class="table">
+      <thead><tr><th>ID</th><th>Status</th><th>Items</th><th>Scheduled</th><th>Actions</th></tr></thead>
+      <tbody>
+        {% for p in pickups %}
+          <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.status }}</td>
+            <td>{{ p.items|length }}</td>
+            <td>{{ p.scheduled_date or 'N/A' }}</td>
+            <td>
+              <a class="btn btn-sm btn-info" href="{{ url_for('pickup_detail', pid=p.id) }}">View</a>
+              {% if p.status not in ['in_progress','completed'] %}
+                <form method="post" action="{{ url_for('cancel_pickup', pid=p.id) }}" style="display:inline;">
+                  <button class="btn btn-sm btn-danger">Cancel</button>
+                </form>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No pickup requests yet.</p>
+  {% endif %}
+{% endblock %}

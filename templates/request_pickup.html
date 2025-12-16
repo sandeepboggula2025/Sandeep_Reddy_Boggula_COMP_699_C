@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h4>Request Pickup</h4>
+  <form method="post" enctype="multipart/form-data">
+    {{ pr_form.hidden_tag() }}
+    {{ item_form.hidden_tag() }}
+    <div class="mb-2">{{ pr_form.location.label }}{{ pr_form.location(class="form-control") }}</div>
+    <div class="mb-2">{{ pr_form.scheduled_date.label }}{{ pr_form.scheduled_date(class="form-control") }}</div>
+    <div class="mb-2">{{ pr_form.notes.label }}{{ pr_form.notes(class="form-control", rows=3) }}</div>
+    <div class="mb-2">{{ pr_form.photo.label }}{{ pr_form.photo(class="form-control") }}</div>
+    <hr>
+    <h6>Item details</h6>
+    <div class="mb-2">{{ item_form.item_type.label }}{{ item_form.item_type(class="form-control") }}</div>
+    <div class="mb-2">{{ item_form.quantity.label }}{{ item_form.quantity(class="form-control") }}</div>
+    <div class="mb-2">{{ item_form.condition_status.label }}{{ item_form.condition_status(class="form-control") }}</div>
+    <div>{{ pr_form.submit(class="btn btn-success") }}</div>
+  </form>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h4>Pickup #{{ pickup.id }} — {{ pickup.status }}</h4>
+  <p><strong>Location:</strong> {{ pickup.location }}</p>
+  <p><strong>Scheduled:</strong> {{ pickup.scheduled_date }}</p>
+  <p><strong>Notes:</strong> <pre>{{ pickup.notes }}</pre></p>
+  {% if pickup.photo_filename %}
+    <p><img src="{{ url_for('uploaded_file', filename=pickup.photo_filename) }}" style="max-width:300px"></p>
+  {% endif %}
+  <h5>Items</h5>
+  <ul>
+    {% for it in items %}
+      <li>{{ it.item_type }} — qty: {{ it.quantity }} — {{ it.condition_status }}</li>
+    {% endfor %}
+  </ul>
+
+  {% if status_form %}
+    <hr>
+    <h5>Update Status (Staff)</h5>
+    <form method="post">
+      {{ status_form.hidden_tag() }}
+      {{ status_form.status.label }}{{ status_form.status(class="form-control mb-2") }}
+      {{ status_form.notes.label }}{{ status_form.notes(class="form-control mb-2", rows=3) }}
+      {{ status_form.submit(class="btn btn-primary") }}
+    </form>
+  {% endif %}
+{% endblock %}

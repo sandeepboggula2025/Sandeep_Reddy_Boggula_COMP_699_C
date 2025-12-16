@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h4>Staff Dashboard</h4>
+  <h5>Assigned Pickups</h5>
+  {% if assigned %}
+    <table class="table">
+      <thead><tr><th>ID</th><th>Household</th><th>Status</th><th>Scheduled</th><th>Action</th></tr></thead>
+      <tbody>
+      {% for p in assigned %}
+        <tr>
+          <td>{{ p.id }}</td>
+          <td>{{ p.household.username }}</td>
+          <td>{{ p.status }}</td>
+          <td>{{ p.scheduled_date or 'N/A' }}</td>
+          <td><a class="btn btn-sm btn-info" href="{{ url_for('pickup_detail', pid=p.id) }}">Open</a></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No assigned pickups.</p>
+  {% endif %}
+{% endblock %}

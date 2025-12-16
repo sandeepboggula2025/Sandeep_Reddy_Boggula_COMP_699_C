@@ -1,0 +1,134 @@
+/* Global */
+body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+}
+
+/* Containers */
+.card {
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+.card h4,
+.card h3 {
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 6px !important;
+    padding: 7px 15px !important;
+    font-weight: 500 !important;
+}
+
+.btn-primary {
+    background: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-primary:hover {
+    background: #0b5ed7;
+}
+
+.btn-danger:hover {
+    background: #d32f2f;
+}
+
+.btn-info {
+    background: #0dcaf0;
+    border-color: #0dcaf0;
+}
+
+.btn-info:hover {
+    background: #0bbcd8;
+}
+
+/* Tables */
+.table {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.table th {
+    background: #e9ecef;
+    font-weight: 600;
+}
+
+.table td, .table th {
+    padding: 12px 14px;
+}
+
+/* Forms */
+form label {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    border-radius: 6px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.15rem rgba(13,110,253,0.25);
+}
+
+/* Alerts */
+.alert {
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+}
+
+/* Dashboard Sections */
+.section-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #0d6efd;
+}
+
+/* List Items */
+.list-group-item {
+    border: none;
+    border-left: 4px solid #0d6efd;
+    margin-bottom: 8px;
+    background: #fff !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Pickup Detail Image */
+img {
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+}
+
+/* Footer (optional) */
+.footer {
+    margin-top: 40px;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #666;
+}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="card p-4">
+    <h3 class="mb-3">Welcome to the E-Waste Pickup Scheduler</h3>
+
+    <p style="font-size: 1.05rem;">
+      A simple and efficient platform for households to schedule electronic waste pickups. 
+      Administrators review and assign tasks, while pickup staff manage and complete assigned pickups.
+      Track your request status, receive updates, and help promote safe and responsible e-waste disposal.
+    </p>
+
+    <div class="mt-3">
+      <a class="btn btn-primary" href="{{ url_for('register_household') }}">Register Household</a>
+      <a class="btn btn-secondary" href="{{ url_for('register_staff') }}">Register Staff</a>
+      <a class="btn btn-outline-primary" href="{{ url_for('login') }}">Login</a>
+    </div>
+  </div>
+{% endblock %}
